@@ -1,0 +1,11 @@
+com\qsq\ego\rpc\mapper\TbContentMapper.class
+com\qsq\ego\rpc\mapper\TbItemParamMapper.class
+com\qsq\ego\rpc\mapper\TbItemDescMapper.class
+com\qsq\ego\rpc\mapper\TbItemMapper.class
+com\qsq\ego\rpc\mapper\TbUserMapper.class
+com\qsq\ego\rpc\mapper\TbItemParamItemMapper.class
+com\qsq\ego\rpc\mapper\TbContentCategoryMapper.class
+com\qsq\ego\rpc\mapper\TbOrderMapper.class
+com\qsq\ego\rpc\mapper\TbItemCatMapper.class
+com\qsq\ego\rpc\mapper\TbOrderItemMapper.class
+com\qsq\ego\rpc\mapper\TbOrderShippingMapper.class

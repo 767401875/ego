@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="egorpcmapper" />
+        <module name="egorpcserviceimpl" />
+        <module name="egomanagerweb" />
+        <module name="ego-rpc-service" />
+        <module name="egorpcservice" />
+        <module name="ego-rpc-service-impl" />
+        <module name="ego-manager-web" />
+        <module name="ego-rpc-mapper" />
+        <module name="ego-rpc-pojo" />
+        <module name="ego-common" />
+        <module name="egocommon" />
+        <module name="egorpcpojo" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

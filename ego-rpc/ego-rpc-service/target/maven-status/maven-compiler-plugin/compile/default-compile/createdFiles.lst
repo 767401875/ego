@@ -1,0 +1,7 @@
+com\qsq\ego\rpc\service\ParamItemService.class
+com\qsq\ego\rpc\service\ItemService.class
+com\qsq\ego\rpc\service\ItemDescService.class
+com\qsq\ego\rpc\service\ItemParamService.class
+com\qsq\ego\rpc\service\ItemCatService.class
+com\qsq\ego\rpc\service\TbContentService.class
+com\qsq\ego\rpc\service\TbContentCategoryService.class
