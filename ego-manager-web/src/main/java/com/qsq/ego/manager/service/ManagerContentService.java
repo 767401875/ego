@@ -8,4 +8,5 @@ public interface ManagerContentService {
     PageResult<TbContent> loadTbContentService(Long categoryId, int pageNum, int rows);
     EgoResult saveTbContentService(TbContent tbContent);
     EgoResult deleteTbContentService(String idsStr);
+    EgoResult editTbContentService(TbContent tbContent);
 }

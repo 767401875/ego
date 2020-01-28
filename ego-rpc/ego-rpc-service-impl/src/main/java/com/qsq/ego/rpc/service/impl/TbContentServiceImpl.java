@@ -60,4 +60,10 @@ public class TbContentServiceImpl implements TbContentService {
         }
         return null;
     }
+
+    @Override
+    public EgoResult updateContent(TbContent tbContent) {
+        tbContentMapper.updateByPrimaryKeySelective(tbContent);
+        return EgoResult.ok();
+    }
 }

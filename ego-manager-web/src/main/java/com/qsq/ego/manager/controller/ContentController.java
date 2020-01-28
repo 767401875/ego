@@ -32,4 +32,9 @@ public class ContentController {
     EgoResult deleteContents(String ids) {
         return managerContentService.deleteTbContentService(ids);
     }
+    @RequestMapping(value = "/content/edit", produces = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8")
+    @ResponseBody
+    EgoResult editContent(TbContent tbContent) {
+        return managerContentService.editTbContentService(tbContent);
+    }
 }

@@ -10,4 +10,5 @@ public interface TbContentService {
     PageResult<TbContent> selectContentList(Long categoryId, int pageNum, int rows);
     EgoResult saveContent(TbContent tbContent);
     EgoResult deleteContent(List<Long> ids);
+    EgoResult updateContent(TbContent tbContent);
 }

@@ -37,4 +37,9 @@ public class ManagerContentServiceImpl implements ManagerContentService {
         }
         return tbContentServiceProxy.deleteContent(longList);
     }
+
+    @Override
+    public EgoResult editTbContentService(TbContent tbContent) {
+        return tbContentServiceProxy.updateContent(tbContent);
+    }
 }
