@@ -13,6 +13,7 @@
         <module>ego-rpc</module>
         <module>ego-manager-web</module>
         <module>jedisClusterDemo</module>
+        <module>ego-portal-web</module>
     </modules>
 
     <properties>
