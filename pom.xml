@@ -12,6 +12,7 @@
         <module>ego-common</module>
         <module>ego-rpc</module>
         <module>ego-manager-web</module>
+        <module>jedisClusterDemo</module>
     </modules>
 
     <properties>
