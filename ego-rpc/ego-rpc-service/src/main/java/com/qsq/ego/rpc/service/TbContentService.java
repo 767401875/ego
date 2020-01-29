@@ -11,4 +11,5 @@ public interface TbContentService {
     EgoResult saveContent(TbContent tbContent);
     EgoResult deleteContent(List<Long> ids);
     EgoResult updateContent(TbContent tbContent);
+    List<TbContent> selectTbContentListByCid(Long categoryId);
 }

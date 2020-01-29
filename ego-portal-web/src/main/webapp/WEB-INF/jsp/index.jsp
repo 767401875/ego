@@ -10,6 +10,7 @@
 <meta name="description" content="易购JD.COM-专业的综合网上购物商城，在线销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品、在线旅游等数万个品牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的网上商城购物体验! ">
 <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,易购商城">
 <link href="/css/ego.css" rel="stylesheet"/>
+<script src="js/jquery-1.6.4.js"></script>
 <script type="text/javascript">
 	window.pageConfig={
 	compatible:true,
@@ -34,28 +35,100 @@
 <div id="o-slide">
 <div class="slide" id="slide">
 <script type="text/javascript">
-;(function(cfg, doc) {
-    if ( !cfg.DATA_MSlide ) {
-        cfg.DATA_MSlide=[];
-    }
-    //var data = [{"srcB":"http://image.ego.com/images/2015/03/03/2015030304360302109345.jpg","height":240,"alt":"","width":670,"src":"http://image.ego.com/images/2015/03/03/2015030304360302109345.jpg","widthB":550,"href":"http://sale.jd.com/act/e0FMkuDhJz35CNt.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.ego.com/images/2015/03/03/2015030304353109508500.jpg","height":240,"alt":"","width":670,"src":"http://image.ego.com/images/2015/03/03/2015030304353109508500.jpg","widthB":550,"href":"http://sale.jd.com/act/UMJaAPD2VIXkZn.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.ego.com/images/2015/03/03/2015030304345761102862.jpg","height":240,"alt":"","width":670,"src":"http://image.ego.com/images/2015/03/03/2015030304345761102862.jpg","widthB":550,"href":"http://sale.jd.com/act/UMJaAPD2VIXkZn.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.ego.com/images/2015/03/03/201503030434200950530.jpg","height":240,"alt":"","width":670,"src":"http://image.ego.com/images/2015/03/03/201503030434200950530.jpg","widthB":550,"href":"http://sale.jd.com/act/kj2pmwMuYCrGsK3g.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.ego.com/images/2015/03/03/2015030304333327002286.jpg","height":240,"alt":"","width":670,"src":"http://image.ego.com/images/2015/03/03/2015030304333327002286.jpg","widthB":550,"href":"http://sale.jd.com/act/xcDvNbzAqK0CoG7I.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.ego.com/images/2015/03/03/2015030304324649807137.jpg","height":240,"alt":"","width":670,"src":"http://image.ego.com/images/2015/03/03/2015030304324649807137.jpg","widthB":550,"href":"http://sale.jd.com/act/eDpBF1s8KcTOYM.html?cpdad=1DLSUE","heightB":240}];
-	var data = ${ad1};
+ 
+ 
+ //发送ajax请求，加载大广告位的内容
+ var len=0;
+ $(function(){
+	$.ajax({
+		//async:false,
+		type:"POST",
+		url:"/content/index/list.html",
+		data:"categoryId=89",
+		
+		success:function(ele){
+			
+			var data=JSON.parse(ele);
+			//alert(data.length);
+			len=data.length;
+			
+			var div=$("#slide");
+			//创建ul对象
+			var ul=$('<ul class="slide-items"></ul>');
+			//创建一个保存广告图片编号的div
+			var divNum=$('<div class="slide-controls"></div>');
+			
+			
+			//将ul添加到div
+			div.append(ul);
+			//将divNum添加到div
+			div.append(divNum);
+			//遍历响应回来的图片集合，将结果添加到显示广告的div中
+			for(var x=0;x<len;x++){
+				//获得一个广告信息的json对象
+				var first=data[x];
+				var TPL = ''
+				if(x==0){
+					TPL=TPL
+		            +'<li clstag="homepage|keycount|home2013|09a1" style="display:block" id="t'+(x+1)+'">'
+		            +'<a href="'+ first.href +'" target="_blank" title="'+ first.alt +'">'
+		            +'<img src="'+ first.src +'" width="'+ first.width +'" height="'+ first.height +'" >'
+		            +'</a>'
+		            +'</li>';
+				}else{
+					TPL=TPL
+		            +'<li clstag="homepage|keycount|home2013|09a1" style="display:none" id="t'+(x+1)+'">'
+		            +'<a href="'+ first.href +'" target="_blank" title="'+ first.alt +'">'
+		            +'<img src="'+ first.src +'" width="'+ first.width +'" height="'+ first.height +'" >'
+		            +'</a>'
+		            +'</li>';
+				}
+				
+			    //将tpl字符串添加到ul中
+			    ul.append(TPL);
+			    
+			    //divNum中添加广告图片编号
+			    divNum.append('<span class="curr" onClick="javascript:changeImage('+(x+1)+')">'+(x+1)+'</span>')
+			    
+			}
+		
+	}});
+	
 
-    cfg.DATA_MSlide = data;
-    // 初始化一个广告信息
-    if ( cfg.DATA_MSlide.length > 1 ) {
-    	var first = pageConfig.FN_GetCompatibleData( cfg.DATA_MSlide[0] );
-        var TPL = ''
-            +'<ul class="slide-items">'
-            +'<li clstag="homepage|keycount|home2013|09a1">'
-            +'<a href="'+ first.href +'" target="_blank" title="'+ first.alt +'">'
-            +'<img src="'+ first.src +'" width="'+ first.width +'" height="'+ first.height +'" >'
-            +'</a>'
-            +'</li>'
-            +'</ul><div class="slide-controls"><span class="curr">1</span></div>';
-        doc.write(TPL);
-    }
-})(pageConfig, document);;</script>
+});
+ 
+/**
+定义changeImage函数
+**/
+function changeImage(id){
+	//alert(id);
+	var li=$("#t"+id);
+	li.show();
+	
+	for(var x=0;x<len;x++){
+		if((x+1)!=id){
+			li=$("#t"+(x+1));
+			li.hide();
+			
+		}
+	}
+}
+ 
+//定时自己切换广告图片
+var index=1;
+function showImage(){
+	changeImage(index);
+	index++;
+	if(index>len){
+		index=1;
+	}
+	//定时调用
+	setTimeout("showImage()",3000);
+}
+
+showImage();
+	 
+</script>
 </div><!--slide end-->
 <div class="jscroll" id="mscroll">
 <div class="ctrl" id="mscroll-ctrl-prev"><b></b></div>

@@ -1,6 +1,4 @@
- /*
- Date: 2014-01-21 
- */
+ 
 function login() {
     return location.href = "http://localhost:8084/user/showLogin";
 }

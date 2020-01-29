@@ -46,7 +46,8 @@
 		<div id="nav-2013">
 			<div id="categorys-2013" class="categorys-2014">
 				<div class="mt ld">
-					<h2><a href="http://www.jd.com/allSort.aspx" clstag="homepage|keycount|home2013|06a">全部商品分类<b></b></a></h2>
+					<h2><a href="#" 
+					clstag="homepage|keycount|home2013|06a">全部商品分类<b></b></a></h2>
 				</div>
 				<div id="_JD_ALLSORT" class="mc">
 					<div class="item fore1">

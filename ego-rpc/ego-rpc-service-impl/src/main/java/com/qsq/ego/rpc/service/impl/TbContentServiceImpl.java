@@ -66,4 +66,13 @@ public class TbContentServiceImpl implements TbContentService {
         tbContentMapper.updateByPrimaryKeySelective(tbContent);
         return EgoResult.ok();
     }
+
+    @Override
+    public List<TbContent> selectTbContentListByCid(Long categoryId) {
+        TbContentExample tbContentExample = new TbContentExample();
+        TbContentExample.Criteria criteria = tbContentExample.createCriteria();
+        criteria.andCategoryIdEqualTo(categoryId);
+        List<TbContent> tbContents = tbContentMapper.selectByExampleWithBLOBs(tbContentExample);
+        return tbContents;
+    }
 }

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ItemCatService {
     List<TbItemCat> getItemCatListByParentId(Long id);
+    List<TbItemCat> loadItemCatList();
 }
