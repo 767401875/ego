@@ -7,23 +7,37 @@ import com.qsq.ego.portal.utils.JsonUtils;
 import com.qsq.ego.rpc.pojo.TbItemCat;
 import com.qsq.ego.rpc.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import redis.clients.jedis.JedisCluster;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PortalItemCatServiceImpl implements PortalItemCatService {
+    @Value("${ITEM_CAT}")
+    private String itemCatKey;
+
     @Autowired
-    ItemCatService itemCatServiceProxy;
+    private ItemCatService itemCatServiceProxy;
+    @Autowired
+    private JedisCluster cluster;
 
     @Override
     public String loadItemCatService() {
+        String resStr = new String();
+        resStr = cluster.get(itemCatKey);
+        if(!StringUtils.isEmpty(resStr)){
+            return resStr;
+        }
         List<TbItemCat> itemCatList = itemCatServiceProxy.loadItemCatList();
         CatResult catResult = new CatResult();
         List<?> data = getChildren(0L, itemCatList);
         catResult.setData(data);
-        String resStr = JsonUtils.objectToJson(catResult);
+        resStr = JsonUtils.objectToJson(catResult);
+        cluster.set(itemCatKey, resStr);
         return resStr;
     }
     private List<?> getChildren(Long parentId, List<TbItemCat> itemCats) {
