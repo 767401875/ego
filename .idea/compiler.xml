@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="egorpcserviceimpl" />
         <module name="jedisClusterDemo" />
+        <module name="ego-search-web" />
         <module name="ego-rpc-mapper" />
         <module name="ego-portal-web" />
         <module name="egocommon" />
