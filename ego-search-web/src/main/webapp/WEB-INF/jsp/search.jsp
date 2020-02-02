@@ -35,7 +35,7 @@
 	<a href="search?keyword=java&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=6">6</a>
 	<span class="text">…</span>
 	<a href="search?keyword=java&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2" class="next">下一页<b></b></a>
-	<span class="page-skip"><em>&nbsp;&nbsp;共${totalPages}页&nbsp;&nbsp;&nbsp;&nbsp;到第</em></span>
+	<span class="page-skip"><em>&nbsp;&nbsp;共${maxpage}页&nbsp;&nbsp;&nbsp;&nbsp;到第</em></span>
 </div>
 </div>
 <div class="m psearch " id="plist">
@@ -72,7 +72,7 @@
 <script type="text/javascript">
 //${paginator.totalPages}
 SEARCH.query = "${query}";
-SEARCH.bottom_page_html(${page},${totalPages},'');
+SEARCH.bottom_page_html(${page},${maxpage},'');
 </script>
 </body>
 </html>

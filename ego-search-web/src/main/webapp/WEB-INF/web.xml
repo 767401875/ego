@@ -26,7 +26,7 @@
     <!-- 指定spring的配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/applicationContext-service.xml</param-value>
+        <param-value>classpath:spring/applicationContext-*.xml</param-value>
     </context-param>
 
     <!-- POST请求的乱码过滤器 -->

@@ -7,18 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="egorpcserviceimpl" />
-        <module name="jedisClusterDemo" />
+        <module name="ego-rpc-pojo" />
         <module name="ego-search-web" />
         <module name="ego-rpc-mapper" />
         <module name="ego-portal-web" />
         <module name="egocommon" />
         <module name="egorpcpojo" />
-        <module name="ego-rpc-pojo" />
         <module name="ego-rpc-service-impl" />
         <module name="ego-rpc-service" />
         <module name="ego-manager-web" />
         <module name="egorpcservice" />
         <module name="ego-common" />
+        <module name="jedisClusterDemo" />
         <module name="egomanagerweb" />
         <module name="egorpcmapper" />
       </profile>
