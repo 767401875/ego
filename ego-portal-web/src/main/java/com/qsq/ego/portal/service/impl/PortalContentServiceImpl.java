@@ -2,9 +2,9 @@ package com.qsq.ego.portal.service.impl;
 
 import com.qsq.ego.portal.beans.BigPicture;
 import com.qsq.ego.portal.service.PortalContentService;
-import com.qsq.ego.portal.utils.JsonUtils;
 import com.qsq.ego.rpc.pojo.TbContent;
 import com.qsq.ego.rpc.service.TbContentService;
+import com.qsq.ego.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

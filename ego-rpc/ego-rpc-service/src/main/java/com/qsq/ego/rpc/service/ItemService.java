@@ -15,4 +15,5 @@ public interface ItemService {
     EgoResult deleteItem(List<Long> itemIds);
     EgoResult saveItem(TbItem item, TbItemDesc desc, TbItemParamItem itemParamItem);
     EgoResult updateItem(TbItem item, TbItemDesc tbItemDesc, TbItemParamItem itemParamItem);
+    TbItem selectItemById(Long id);
 }

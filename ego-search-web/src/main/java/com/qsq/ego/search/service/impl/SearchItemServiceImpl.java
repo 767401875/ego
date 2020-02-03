@@ -1,5 +1,7 @@
 package com.qsq.ego.search.service.impl;
 
+import com.qsq.ego.rpc.pojo.TbItem;
+import com.qsq.ego.rpc.service.ItemService;
 import com.qsq.ego.search.dao.ItemDao;
 import com.qsq.ego.search.entity.Item;
 import com.qsq.ego.search.entity.SearchResult;
@@ -19,6 +21,8 @@ import java.util.Map;
 public class SearchItemServiceImpl implements SearchItemService {
     @Autowired
     private ItemDao itemDaoImpl;
+    @Autowired
+    private ItemService itemServiceProxy;
 
     @Override
     public SearchResult loadItemService(String item_keywords, Integer page) {
@@ -64,5 +68,10 @@ public class SearchItemServiceImpl implements SearchItemService {
         result.setTotal(total);
         result.setList(list);
         return result;
+    }
+
+    @Override
+    public TbItem loadItemService(Long id) {
+        return itemServiceProxy.selectItemById(id);
     }
 }

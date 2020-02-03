@@ -113,4 +113,8 @@ public class TbItem implements Serializable {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
+
+    public String[] getImages(){
+        return image.split(",");
+    }
 }

@@ -1,5 +1,6 @@
 package com.qsq.ego.search.controller;
 
+import com.qsq.ego.rpc.pojo.TbItem;
 import com.qsq.ego.search.entity.SearchResult;
 import com.qsq.ego.search.service.SearchItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.UnsupportedEncodingException;
 
@@ -30,5 +30,11 @@ public class SearchItemController {
             e.printStackTrace();
         }
         return url;
+    }
+    @RequestMapping("/item/{id}")
+    public String loadItem(@PathVariable Long id, Model model){
+        TbItem item = searchItemService.loadItemService(id);
+        model.addAttribute("item", item);
+        return "item";
     }
 }
