@@ -19,6 +19,7 @@
         <module name="ego-manager-web" />
         <module name="egorpcservice" />
         <module name="ego-common" />
+        <module name="ego-sso-web" />
         <module name="egomanagerweb" />
         <module name="jedisClusterDemo" />
       </profile>

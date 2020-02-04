@@ -1,6 +1,8 @@
+com\qsq\ego\beans\CookieUtils.class
+com\qsq\ego\utils\JsonUtils.class
+com\qsq\ego\beans\TreeNode.class
 com\qsq\ego\beans\EgoResult.class
 com\qsq\ego\beans\IDUtils.class
 com\qsq\ego\beans\PageResult.class
-com\qsq\ego\beans\TreeNode.class
 com\qsq\ego\beans\FtpUtils.class
 com\qsq\ego\beans\PictureResult.class

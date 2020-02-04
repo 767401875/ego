@@ -3,7 +3,6 @@ com\qsq\ego\portal\beans\BigPicture.class
 com\qsq\ego\portal\controller\PortalContentController.class
 com\qsq\ego\portal\service\PortalContentService.class
 com\qsq\ego\portal\service\PortalItemCatService.class
-com\qsq\ego\portal\utils\JsonUtils.class
 com\qsq\ego\portal\service\impl\PortalItemCatServiceImpl.class
 com\qsq\ego\portal\beans\CatResult.class
 com\qsq\ego\portal\controller\PageController.class

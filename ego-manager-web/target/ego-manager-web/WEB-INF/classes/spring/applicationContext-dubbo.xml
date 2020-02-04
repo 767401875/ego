@@ -20,5 +20,5 @@
     <dubbo:reference interface="com.qsq.ego.rpc.service.ParamItemService" id="paramItemServiceProxy"></dubbo:reference>
     <dubbo:reference interface="com.qsq.ego.rpc.service.TbContentCategoryService" id="tbContentCategoryServiceProxy"></dubbo:reference>
     <dubbo:reference interface="com.qsq.ego.rpc.service.TbContentService" id="tbContentServiceProxy"></dubbo:reference>
-
+    <dubbo:reference interface="com.qsq.ego.rpc.service.TbUserService" id="tbUserServiceProxy"></dubbo:reference>
 </beans>
