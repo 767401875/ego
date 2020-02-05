@@ -12,6 +12,7 @@
         <module name="ego-rpc-mapper" />
         <module name="egorpcmapper" />
         <module name="ego-portal-web" />
+        <module name="ego-item-web" />
         <module name="egorpcpojo" />
         <module name="ego-rpc-pojo" />
         <module name="ego-rpc-service-impl" />
