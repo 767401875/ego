@@ -42,7 +42,7 @@ public class SsoUserServiceImpl implements SsoUserService {
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         EgoResult result = new EgoResult();
         if(tbUser != null){
-            if(password.equals(tbUser.getPassword())){
+                if(password.equals(tbUser.getPassword())){
                 String jsonStr = JsonUtils.objectToJson(tbUser);
                 String token = UUID.randomUUID().toString();
                 cluster.set(token, jsonStr);

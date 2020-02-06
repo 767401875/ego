@@ -13,8 +13,5 @@
    <dubbo:registry address="106.12.34.249:2181,106.12.34.249:2182,106.12.34.249:2183" protocol="zookeeper" />
    
    <!-- spring容器中存在一个远程服务的代理对象 -->
-   <!-- <dubbo:reference interface="com.bjsxt.ego.rpc.service.TbUserService" id="tbUserServiceProxy"></dubbo:reference>
-     -->
-	
-
+   <dubbo:reference interface="com.qsq.ego.rpc.service.ItemService" id="itemServiceProxy"></dubbo:reference>
 </beans>
