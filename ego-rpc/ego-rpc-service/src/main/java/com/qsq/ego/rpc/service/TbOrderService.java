@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface TbOrderService {
     public void saveTbOrderService(TbOrder tbOrder, List<TbOrderItem> orderItems, TbOrderShipping tbOrderShipping);
+    List<TbOrder> selectTbOrderListService(Long id);
+    List<TbOrderItem> selectTbOrderItemListService(String orderId);
 }

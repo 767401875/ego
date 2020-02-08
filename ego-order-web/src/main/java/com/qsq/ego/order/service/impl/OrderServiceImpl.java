@@ -78,4 +78,14 @@ public class OrderServiceImpl implements OrderService {
         carItemDao.deleteCarItemMap(String.valueOf(uid));
         return map;
     }
+
+    @Override
+    public List<TbOrder> loadOrderListService(Long uId) {
+        return tbOrderServiceProxy.selectTbOrderListService(uId);
+    }
+
+    @Override
+    public List<TbOrderItem> loadOrderItemListService(String orderId) {
+        return tbOrderServiceProxy.selectTbOrderItemListService(orderId);
+    }
 }

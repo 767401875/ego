@@ -3,9 +3,7 @@ package com.qsq.ego.rpc.service.impl;
 import com.qsq.ego.rpc.mapper.TbOrderItemMapper;
 import com.qsq.ego.rpc.mapper.TbOrderMapper;
 import com.qsq.ego.rpc.mapper.TbOrderShippingMapper;
-import com.qsq.ego.rpc.pojo.TbOrder;
-import com.qsq.ego.rpc.pojo.TbOrderItem;
-import com.qsq.ego.rpc.pojo.TbOrderShipping;
+import com.qsq.ego.rpc.pojo.*;
 import com.qsq.ego.rpc.service.TbOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +30,21 @@ public class TbOrderServiceImpl implements TbOrderService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public List<TbOrder> selectTbOrderListService(Long id) {
+        TbOrderExample example = new TbOrderExample();
+        TbOrderExample.Criteria criteria = example.createCriteria();
+        criteria.andUserIdEqualTo(id);
+        return tbOrderMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<TbOrderItem> selectTbOrderItemListService(String orderId) {
+        TbOrderItemExample example = new TbOrderItemExample();
+        TbOrderItemExample.Criteria criteria = example.createCriteria();
+        criteria.andOrderIdEqualTo(orderId);
+        return tbOrderItemMapper.selectByExample(example);
     }
 }
