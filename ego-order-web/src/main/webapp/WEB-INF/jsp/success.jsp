@@ -48,8 +48,8 @@
 					<div class="success-b">
 						<h3>下订单成功！</h3>
 						<div>
-							 <h3>订单号：${result.orderId }</h3>
-							 <h3>订单金额：${result.total }</h3>
+							 <h3>订单号：${orderId }</h3>
+							 <h3>订单金额：${total }</h3>
 							 
 							
 						</div>

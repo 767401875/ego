@@ -31,6 +31,16 @@
       <!-- 后缀 -->
       <property name="suffix" value=".jsp"></property>
    </bean>
+
+   <bean id="loginInterceptor"  class="com.qsq.ego.order.interceptor.LoginInterceptor"></bean>
+
+   <!-- 注册拦截器 -->
+   <mvc:interceptors>
+      <mvc:interceptor>
+         <mvc:mapping path="/**"/>
+         <ref bean="loginInterceptor"/>
+      </mvc:interceptor>
+   </mvc:interceptors>
    
 
 </beans>

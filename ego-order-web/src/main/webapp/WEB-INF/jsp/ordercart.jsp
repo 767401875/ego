@@ -33,8 +33,8 @@
 </c:forEach> --%>
 <form id="orderForm" class="hide" action="/order/save" method="post">
 		<input type="hidden" name="paymentType" value="1"/>
-		<c:forEach items="${map }" var="cart" varStatus="status">
-			<c:set var="totalPrice"  value="${ totalPrice + (cart.value.item.price * cart.value.num)}"/>
+		<c:forEach items="${carMap }" var="cart" varStatus="status">
+			<c:set var="totalPrice"  value="${ totalPrice + (cart.value.tbItem.price * cart.value.num)}"/>
 			<%-- <input type="hidden" name="orderItems[${status.index}].itemId" value="${cart.value.item.id}"/>
 			<input type="hidden" name="orderItems[${status.index}].num" value="${cart.value.num }"/>
 			<input type="hidden" name="orderItems[${status.index}].price" value="${cart.value.item.price}"/>
@@ -186,27 +186,27 @@
      <!--配送方式-->
     <h4 class="vendor_name_h" id="0">商家：易购商城</h4>		         
     <div class="goods-suit goods-last">
-	 <c:forEach items="${cartList }" var="cart">
+	 <c:forEach items="${carMap }" var="cart">
 		<div class="goods-item goods-item-extra">
 
 			<div class="p-img">
-				<a target="_blank" href="/item/${cart.id}.html">
-					<img src="${cart.images[0]}" alt="">
+				<a target="_blank" href="/item/${cart.value.tbItem.id}.html">
+					<img src="${cart.value.tbItem.images[0]}" alt="">
 				</a>
 			</div>
 			<div class="goods-msg">
 				<div class="p-name">
-					<a href="/item/${cart.id}.html" target="_blank">
-						${cart.title } 
+					<a href="/item/${cart.value.tbItem.id}.html" target="_blank">
+						${cart.value.tbItem.title }
 					</a>
 				</div>
 				<div class="p-price">
 					<!--增加预售金额显示 begin   预售分阶段支付类型（1：一阶梯全款支付；2：一阶梯定金支付(全款或定金可选)；3：三阶梯仅定金支付） -->
 					<strong>￥<fmt:formatNumber
 							groupingUsed="false" maxFractionDigits="2"
-							minFractionDigits="2" value="${cart.price / 100 }" /></strong>
+							minFractionDigits="2" value="${cart.value.tbItem.price / 100 }" /></strong>
 					<!--增加预售金额显示 end-->
-					<span class="ml20"> x${cart.num} </span> 
+					<span class="ml20"> x${cart.value.tbItem.num} </span>
 					<span class="ml20 p-inventory" skuId="11555193">有货</span>
 				</div>
 				<i class="p-icon p-icon-w"></i><span class="ftx-04">7天无理由退货</span>

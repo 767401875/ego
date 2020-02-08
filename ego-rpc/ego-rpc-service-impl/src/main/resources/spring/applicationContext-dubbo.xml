@@ -25,4 +25,5 @@
 	 <dubbo:service interface="com.qsq.ego.rpc.service.TbContentCategoryService" ref="tbContentCategoryServiceImpl"></dubbo:service>
 	 <dubbo:service interface="com.qsq.ego.rpc.service.TbContentService" ref="tbContentServiceImpl"></dubbo:service>
 	 <dubbo:service interface="com.qsq.ego.rpc.service.TbUserService" ref="tbUserServiceImpl"></dubbo:service>
+	<dubbo:service interface="com.qsq.ego.rpc.service.TbOrderService" ref="tbOrderServiceImpl"></dubbo:service>
 </beans>
